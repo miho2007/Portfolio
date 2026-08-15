@@ -13,6 +13,10 @@
  * Optional attributes:
  *   api-base   — backend URL (defaults to the value below)
  */
+
+(() => {
+  const DEFAULT_API_BASE = "https://mini-me-backend-ue1z.onrender.com";
+
 class MiniMeWidget extends HTMLElement {
   constructor() {
     super();
@@ -662,4 +666,19 @@ class MiniMeWidget extends HTMLElement {
     </script>
     </body>
     </html>
-    `
+    `;
+  }
+
+
+
+  connectedCallback() {
+      const apiBase = this.getAttribute('api-base') || DEFAULT_API_BASE;
+      
+      // ALL YOUR JS LOGIC (canvas animation, chat handlers, fetch requests to apiBase) 
+      // GOES HERE INSIDE THIS CONNECTED CALLBACK OR SCOPED PROPERLY
+    }
+  }
+
+  // Register the component
+  customElements.define('mini-me-widget', MiniMeWidget);
+})();
