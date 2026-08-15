@@ -667,18 +667,12 @@ class MiniMeWidget extends HTMLElement {
     </body>
     </html>
     `;
+    })();
   }
+}
 
+// 1. Register the custom element tag
+customElements.define('mini-me-widget', MiniMeWidget);
 
-
-  connectedCallback() {
-      const apiBase = this.getAttribute('api-base') || DEFAULT_API_BASE;
-      
-      // ALL YOUR JS LOGIC (canvas animation, chat handlers, fetch requests to apiBase) 
-      // GOES HERE INSIDE THIS CONNECTED CALLBACK OR SCOPED PROPERLY
-    }
-  }
-
-  // Register the component
-  customElements.define('mini-me-widget', MiniMeWidget);
+// 2. Close the outer IIFE wrapper
 })();
