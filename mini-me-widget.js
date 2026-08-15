@@ -667,7 +667,7 @@ class MiniMeWidget extends HTMLElement {
     </body>
     </html>
     `
-    }();
+    
   }
 }
 
